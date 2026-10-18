@@ -1,5 +1,11 @@
 # BeastVoice 1.2
 
+## Download the complete audio package
+
+**[Download BeastVoice and its accompanying audio package on Nexus Mods](https://www.nexusmods.com/finalfantasy11/mods/32?tab=files).**
+
+GitHub contains the addon source and documentation. To hear the supplied recordings, install the complete package from Nexus Mods; the GitHub source ZIP does not include the audio library.
+
 Creature combat voices for Ashita v4. Runtime version: 1.2.0.
 
 ## Install
