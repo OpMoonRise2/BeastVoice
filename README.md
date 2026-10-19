@@ -23,6 +23,10 @@ The optional Goblin bomb overlay belongs at `Ashita/polplugins/DATs/beastvoice-b
 
 Ordinary TP vocals trigger on readies; completion lines are suppressed to prevent duplicates. Shadow Lord Implosion intentionally triggers on uses and plays its numbered recordings in order: 1, 2, 3, 4, then repeats from 1. Reloading the addon resets the sequence. Tonberry TP vocals use one exclusive BeastVoice channel; concurrent addon voice events are discarded until playback finishes. Bonze Marberry maps to Tonberry voices.
 
+## Shadow Lord encounter aggro
+
+The opening aggro line is eligible only on the first engagement of the encounter. Phase-two re-engagement and mob-index changes do not replay it. The flag survives phase-one defeat and transient player-memory recovery; a fresh zone entry or player/zone identity change resets it. Existing aggro preset and rate settings still apply to the first opportunity. Audition remains independent.
+
 ## Shadow Lord Stonega
 
 Stonega and tiered casts such as Stonega II use `Shadowlord/shadow_stonega.wav`. Supply that recording in the voice folder to enable it; a missing recording is skipped. This corrects the old Stonea spelling.

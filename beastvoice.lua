@@ -377,6 +377,8 @@ local MAX_POLYPHONY = 15;
 
 -- Aggro tracking: remember which mobs have already aggro'd
 local engaged_mobs = {};  -- Track by entity index
+-- Both Shadow Lord phases belong to one encounter, even when the mob index changes.
+local shadow_encounter = { identity=nil, aggro_seen=false };
 -- Departure leaves old entities in memory after their tracking is cleared.
 local aggro_transition = { phase='active', identity=nil, stable_since=nil };
 local AGGRO_ARRIVAL_STABLE_TIME = 1.0;
@@ -1258,6 +1260,9 @@ end
 
 -- Keep stale zone entities and delayed voice requests silent across loading.
 local function BeginAggroTransition(phase)
+    if phase == 'arriving' then
+        shadow_encounter = { identity=nil, aggro_seen=false };
+    end
     aggro_transition.phase = phase;
     aggro_transition.identity = nil;
     aggro_transition.stable_since = nil;
@@ -1654,6 +1659,11 @@ ashita.events.register('d3d_present', 'beastvoice_aggro_scan', function()
         SuspendAggroUntilReady();
         return;
     end
+    local encounter_identity = string.format('%d:%d', player_zone, player_id);
+    if shadow_encounter.identity and shadow_encounter.identity ~= encounter_identity then
+        shadow_encounter.aggro_seen = false;
+    end
+    shadow_encounter.identity = encounter_identity;
     local identity = string.format('%d:%d:%d', player_zone, player_id, player_index);
     if aggro_transition.phase == 'active' and aggro_transition.identity
        and aggro_transition.identity ~= identity then
@@ -1772,7 +1782,9 @@ ashita.events.register('d3d_present', 'beastvoice_aggro_scan', function()
                                         mob_name, race, aggro_reason, distance))));
                                 end
 
-                                if not seed_aggro_only and should_play_combat('aggro', race) then
+                                local allow_aggro = race ~= 'Shadow Lord' or not shadow_encounter.aggro_seen;
+                                if race == 'Shadow Lord' then shadow_encounter.aggro_seen = true; end
+                                if allow_aggro and not seed_aggro_only and should_play_combat('aggro', race) then
                                     local now_aggro = os.clock();
                                     if (now_aggro - (last_aggro_by_race[race] or 0) >= AGGRO_RACE_COOLDOWN) then
                                         last_aggro_by_race[race] = now_aggro;
