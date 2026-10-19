@@ -617,7 +617,7 @@ local beast_data = {
             ['Firaga']          = 'shadow_firaga.wav',
             ['Waterga']         = 'shadow_waterga.wav',
             ['Aeroga']          = 'shadow_aeroga.wav',
-            ['Stonea']          = 'shadow_stonea.wav',
+            ['Stonega']         = 'shadow_stonega.wav',
             ['Ice Spikes']      = 'shadow_icespikes.wav',
         },
         ['aggro']  = { 'shadow_aggro1.wav', 'shadow_aggro2.wav', 'shadow_aggro3.wav', 'shadow_aggro4.wav', 'shadow_aggro5.wav', 'shadow_aggro6.wav', 'shadow_aggro7.wav', 'shadow_aggro8.wav', 'shadow_aggro9.wav' },
@@ -660,7 +660,7 @@ end
 local shadow_spell_families = {
     ['Drain'] = true, ['Aspir'] = true, ['Blind'] = true,
     ['Blizzaga'] = true, ['Thundaga'] = true, ['Firaga'] = true,
-    ['Waterga'] = true, ['Aeroga'] = true, ['Ice Spikes'] = true,
+    ['Waterga'] = true, ['Aeroga'] = true, ['Stonega'] = true, ['Ice Spikes'] = true,
 };
 local spell_tiers = { I=true, II=true, III=true, IV=true, V=true, VI=true, VII=true, VIII=true, IX=true, X=true };
 
