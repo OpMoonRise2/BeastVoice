@@ -21,7 +21,7 @@ The optional Goblin bomb overlay belongs at `Ashita/polplugins/DATs/beastvoice-b
 - Creatures enables each supported family independently. Tonberry TP Songs controls Tonberry TP vocals separately from aggro, attack, ouch and death. Save Settings persists choices.
 - Audition previews installed recordings. Reload with `/addon reload beastvoice` after updating code.
 
-Ordinary TP vocals trigger on readies; completion lines are suppressed to prevent duplicates. Shadow Lord Implosion intentionally triggers on uses and cycles its recorded variations. Tonberry TP vocals use one exclusive BeastVoice channel; concurrent addon voice events are discarded until playback finishes. Bonze Marberry maps to Tonberry voices.
+Ordinary TP vocals trigger on readies; completion lines are suppressed to prevent duplicates. Shadow Lord Implosion intentionally triggers on uses and plays its numbered recordings in order: 1, 2, 3, 4, then repeats from 1. Reloading the addon resets the sequence. Tonberry TP vocals use one exclusive BeastVoice channel; concurrent addon voice events are discarded until playback finishes. Bonze Marberry maps to Tonberry voices.
 
 ## Shadow Lord Stonega
 

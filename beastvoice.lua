@@ -817,9 +817,8 @@ local function get_next_sound(race, action)
     return existing[pick_idx];
 end
 
--- Implosion uses a complete shuffled cycle, including a no-repeat boundary.
+-- Implosion follows its numbered recordings in order, then repeats from 1.
 local implosion_cycle = {};
-local last_implosion_sound = nil;
 
 local function resolve_implosion_sound(skill_entry, race_key)
     local folder = race_sound_folders[race_key] or race_key;
@@ -828,18 +827,8 @@ local function resolve_implosion_sound(skill_entry, race_key)
             local resolved = bv_probe(folder, filename);
             if resolved then table.insert(implosion_cycle, resolved); end
         end
-        for i = #implosion_cycle, 2, -1 do
-            local j = math.random(1, i);
-            implosion_cycle[i], implosion_cycle[j] = implosion_cycle[j], implosion_cycle[i];
-        end
-        local count = #implosion_cycle;
-        if count > 1 and implosion_cycle[count] == last_implosion_sound then
-            implosion_cycle[count], implosion_cycle[1] = implosion_cycle[1], implosion_cycle[count];
-        end
     end
-    local resolved = table.remove(implosion_cycle);
-    last_implosion_sound = resolved;
-    return resolved;
+    return table.remove(implosion_cycle, 1);
 end
 
 -- Resolve skill sound: handles both single file (string) and variant arrays (table)
