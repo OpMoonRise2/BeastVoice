@@ -52,3 +52,11 @@ Frost and Freeze are separate mappings. Use Frost for the elemental debuff recor
 Use the exact case and stems configured in `beastvoice.lua`. The resolver checks `.wav` before `.mp3`. Tonberry examples: `tonberry_ritual_bind.wav`, `tonberry_everyones_grudge.wav`, and `tonberry_everyones_rancor.wav`. Numbered category recordings must also be listed in the relevant category table; placing an extra numbered file in the folder does not automatically register it.
 
 Audio and DAT payloads are distributed separately from the source bundle. Personal settings, runtime signals, backups and recordings marked unused are excluded.
+
+## Normalized audio refresh (2026-10-19)
+
+The complete Nexus package now contains 408 WAV recordings. Of these, 373 were attenuated for more consistent playback; 35 quieter recordings were preserved. Normalization targets active RMS of -20 dBFS and a sample-peak ceiling of -3 dBFS, without boosting quiet recordings. The largest reduction is 10.02 dB.
+
+Four Shadow Lord recordings contained consecutive samples at the digital limit: attack 7, attack 9, ouch 3 and Thundaga. Their playback levels were reduced; pre-existing clipping distortion is not restored. The optional bomb overlay is unchanged.
+
+`AUDIO-MANIFEST.json` records every packaged WAV hash, format, applied gain and measured sample peak. All WAV payloads were fully read and the normalized files verified against the installed addon. This refresh does not change runtime version 1.2.0. No new listening, live combat, LUFS or true-peak tests were performed.
