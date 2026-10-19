@@ -27,6 +27,22 @@ Ordinary TP vocals trigger on readies; completion lines are suppressed to preven
 
 Stonega and tiered casts such as Stonega II use `Shadowlord/shadow_stonega.wav`. Supply that recording in the voice folder to enable it; a missing recording is skipped. This corrects the old Stonea spelling.
 
+## Additional Shadow Lord spells
+
+The following recordings have distinct mappings in `sounds/Shadowlord/`:
+
+| Cast name | Recording |
+| --- | --- |
+| Burn | `shadow_burn.wav` |
+| Rasp | `shadow_rasp.wav` |
+| Choke | `shadow_choke.wav` |
+| Frost | `shadow_frost.wav` |
+| Freeze | `shadow_freeze.wav` |
+| Shock | `shadow_shock.wav` |
+| Drown | `shadow_drown.wav` |
+
+Frost and Freeze are separate mappings. Use Frost for the elemental debuff recording; Freeze is supported separately if you record that spell too. Missing recordings are skipped. Add the WAVs before expecting their callouts to play.
+
 ## Recording names
 
 Use the exact case and stems configured in `beastvoice.lua`. The resolver checks `.wav` before `.mp3`. Tonberry examples: `tonberry_ritual_bind.wav`, `tonberry_everyones_grudge.wav`, and `tonberry_everyones_rancor.wav`. Numbered category recordings must also be listed in the relevant category table; placing an extra numbered file in the folder does not automatically register it.
