@@ -23,6 +23,18 @@ The optional Goblin bomb overlay belongs at `Ashita/polplugins/DATs/beastvoice-b
 
 Ordinary TP vocals trigger on readies; completion lines are suppressed to prevent duplicates. Shadow Lord Implosion intentionally triggers on uses and plays its numbered recordings in order: 1, 2, 3, 4, then repeats from 1. Reloading the addon resets the sequence. Tonberry TP vocals use one exclusive BeastVoice channel; concurrent addon voice events are discarded until playback finishes. Bonze Marberry maps to Tonberry voices.
 
+## How it works
+
+BeastVoice only plays recordings. It does not change anything the server sees, and it does not play the game for you.
+
+- **Combat lines.** It reads incoming chat-log lines (`text_in`) for messages the game already prints: a monster readying a TP move, casting, hitting, taking damage or being defeated. It plays a matching voice for that creature family. It never blocks or changes chat lines.
+- **Aggro line.** A throttled scan of Ashita's entity table looks for monsters that are already engaged (status 1) and within 50 yalms. It counts only those targeting you or a party member, claimed by your party, or unclaimed and within 10 yalms. When it finds one, it plays that family's aggro voice once. A monster that hasn't engaged never triggers a voice. Distance is used only as a filter; nothing is drawn or displayed, and no positions, names or targets are shown.
+- **Packets.** It reads incoming `0x00A`/`0x00B` (zone in/out) only to reset its state. It sends no packets, injects none and modifies none.
+- **Audio and files.** Playback uses the Windows MCI player (`winmm.dll`). It writes its settings and `voice_duck_signal.txt` (so ZoneMusic can lower music under a voice), and reads recordings from `sounds/`.
+- **Commands.** `/bv` and `/beastvoice` open the GUI and change settings; the handler blocks only the addon's own slash commands.
+
+It queues no game commands, creates no macros and automates nothing.
+
 ## Shadow Lord encounter aggro
 
 The opening aggro line is eligible only on the first engagement of the encounter. Phase-two re-engagement and mob-index changes do not replay it. The flag survives phase-one defeat and transient player-memory recovery; a fresh zone entry or player/zone identity change resets it. Existing aggro preset and rate settings still apply to the first opportunity. Audition remains independent.
