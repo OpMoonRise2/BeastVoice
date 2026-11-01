@@ -1,18 +1,32 @@
 # BeastVoice 1.2
 
-## Download the complete audio package
-
-**[Download BeastVoice and its accompanying audio package on Nexus Mods](https://www.nexusmods.com/finalfantasy11/mods/32?tab=files).**
-
-GitHub contains the addon source and documentation. To hear the supplied recordings, install the complete package from Nexus Mods; the GitHub source ZIP does not include the audio library.
-
 Creature combat voices for Ashita v4. Runtime version: 1.2.0.
 
-## Install
+## Download and install the addon
 
-Copy `beastvoice.lua` to `Ashita/addons/beastvoice/`, and the separately supplied `sounds/` folder beside it. Load with `/addon load beastvoice`; open the menu with `/bv`.
+Download **BeastVoice-1.2.0-addon.zip** from [GitHub Releases](https://github.com/OpMoonRise2/BeastVoice/releases/latest). GitHub is the addon download and source-review location. This installation ZIP contains the Lua addon and documentation, without recordings or DAT overlays.
 
-The optional Goblin bomb overlay belongs at `Ashita/polplugins/DATs/beastvoice-bombtoss/`. Add its folder name to your Pivot overlay list. Keep existing overlays and settings; the addon voices and this native sound overlay are separate installation components.
+1. Unload the addon before updating. Preserve your existing settings and recordings.
+2. Extract the ZIP into your Ashita folder. Confirm `addons/beastvoice/beastvoice.lua` exists. The ZIP already has an `addons/` folder.
+3. Supply permitted recordings in `addons/beastvoice/sounds/`, or install the optional audio pack below. Matching recordings must be installed before voices can play.
+4. Load `/addon load beastvoice`; open settings with `/bv`. After updating code, use `/addon reload beastvoice`.
+
+No additional helper binary is shipped or required. BeastVoice uses Ashita's bundled Lua libraries and Windows' built-in `winmm.dll`; do not download replacement system DLLs. Use the named addon ZIP for direct installation. Automatic GitHub source archives use the repository layout and are intended for source review.
+
+## Optional audio and native sound overlays
+
+The [optional BeastVoice recordings on Nexus Mods](https://www.nexusmods.com/finalfantasy11/mods/32?tab=files) are separate from the addon. Download the addon itself from GitHub. Copy only the pack's `sounds/` content beside `beastvoice.lua`, or supply your own permitted audio using the recording names below. Missing recordings are skipped. Do not overwrite newer GitHub addon code with files from an older audio archive.
+
+The optional Goblin bomb native sound overlay is a separate component outside this GitHub release. If using a permitted copy, place it at `polplugins/DATs/beastvoice-bombtoss/` and add `beastvoice-bombtoss` to your existing Pivot overlay list. Preserve other overlays. This repository grants no recording or DAT rights.
+
+## Screenshots
+
+Screenshots supplied by the author for this publication; recordings shown are installed separately.
+
+![General playback and chat recognition](docs/screenshots/general.webp)
+![Voice setup](docs/screenshots/voice-setup.webp)
+![Custom rates](docs/screenshots/rates.webp)
+![Audition recordings](docs/screenshots/audition.webp)
 
 ## Controls
 

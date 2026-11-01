@@ -9,3 +9,8 @@ Preserve the existing queue priorities, TP first-wins exclusivity, readies/uses 
 The source bundle was copied from the installed runtime without behavioral edits during cleanup. Existing local source ownership and license terms are retained; this preparation does not grant a new license.
 
 Audio state as of 2026-10-19: the installed library contains 408 WAVs, with 373 attenuated and 35 unchanged. AUDIO-MANIFEST.json records the current release asset hashes and normalization policy; actual audio remains outside Git and ships in the Nexus package. Original pre-normalization files are retained locally outside the repository. The four original rail-clipped recordings remain subject to recorded distortion; attenuation only provides playback headroom. Runtime source is unchanged and matches origin/main before this documentation update. No merge is needed when local main and origin/main are already identical.
+
+
+## GitHub addon publication (2026-11-01)
+
+README now directs addon installation to the named GitHub Release ZIP and identifies Nexus as optional audio only. Screenshots supplied by the author are in docs/screenshots. Preserve this separation for future releases. See COMPLIANCE.md for current evidence, verification limits and outstanding external-site work. Runtime source is unchanged.
