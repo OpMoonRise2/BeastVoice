@@ -24,4 +24,4 @@ The release-tag snapshot above predates these external-page edits. The existing 
 
 ## Nexus file cleanup (2026-11-01)
 
-All superseded BeastVoice files on Nexus were moved to Nexus's archived category. Nothing was deleted. The current 1.2 full package stays listed for its optional recordings until an audio-only replacement is uploaded. Its file description tells users to copy only the sounds and ignore the bundled addon code.
+All superseded BeastVoice files on Nexus were moved to Nexus's archived category. Nothing was deleted. The 1.2 full package was then replaced as the primary file by an audio-only BeastVoice Sound Pack and archived. The sound pack contains only addons/beastvoice/sounds/ (408 WAV). It contains no Lua or settings files.
