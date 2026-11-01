@@ -8,7 +8,7 @@ Current verification: the Lua files pass loadfile syntax checks. This publicatio
 
 The author-supplied screenshots show the author's installed UI. Their exact runtime revision has not been established; they are visual reference, not proof that the published source reproduces every shown control. Compare the published source before relying on a particular feature.
 
-External Nexus descriptions and downloadable archives have not been changed by this publication. Any old wording directing users to download the addon there still needs removal by the maintainer; retain Nexus downloads for optional audio assets only. Historical audio distribution is not evidence of redistribution rights. No audio or DAT asset is newly published here.
+At release time (tag v1.2.0), Nexus descriptions and downloadable archives had not been changed. The dated sections below record the later Nexus changes. Nexus keeps downloads for optional audio assets only. Historical audio distribution is not evidence of redistribution rights. No audio or DAT asset is newly published here.
 
 This publication does not assert reviewer approval. Final review remains pending.
 
@@ -21,3 +21,7 @@ No binary is shipped in this addon release. The Lua source loads winmm.dll from 
 After the GitHub release publication, the signed-in Nexus short and full descriptions were updated and verified on the public pages. They direct addon/helper downloads to GitHub only and explain optional audio installation. Current mixed-archive file descriptions also direct users to copy only audio/optional sound overlays and ignore bundled legacy code. The ZoneMusic legacy helper file explicitly directs users to GitHub instead of installing it from Nexus.
 
 The release-tag snapshot above predates these external-page edits. The existing Nexus archives themselves remain unchanged, including legacy bundled code and older documentation. Audio-only replacement archives are still pending; no audio, DAT files or newly compiled binaries were uploaded during this follow-up. Historical files and internal archive documentation were not rewritten. Final reviewer approval remains pending.
+
+## Nexus file cleanup (2026-11-01)
+
+All superseded BeastVoice files on Nexus were moved to Nexus's archived category. Nothing was deleted. The current 1.2 full package stays listed for its optional recordings until an audio-only replacement is uploaded. Its file description tells users to copy only the sounds and ignore the bundled addon code.
